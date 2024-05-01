@@ -1,0 +1,47 @@
+﻿@model Taller1.Models.Motor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Motor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TipoMotor" class="control-label"></label>
+                <input asp-for="TipoMotor" class="form-control" />
+                <span asp-validation-for="TipoMotor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="caballos" class="control-label"></label>
+                <input asp-for="caballos" class="form-control" />
+                <span asp-validation-for="caballos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="anio" class="control-label"></label>
+                <input asp-for="anio" class="form-control" />
+                <span asp-validation-for="anio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AutoId" class="control-label"></label>
+                <select asp-for="AutoId" class ="form-control" asp-items="ViewBag.AutoId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
